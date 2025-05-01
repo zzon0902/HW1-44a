@@ -4,29 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Homework Platform</title>
-    body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background-color: #f4f4f9;
-}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f4f4f9;
+        }
 
-.homework-container {
-    text-align: center;
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 100%;
-}
+        .homework-container {
+            text-align: center;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
 
-.homework-container img {
+        .homework-container img {
     width: 100%;
     max-width: 400px;
     height: 300px;
@@ -37,86 +38,87 @@
     display: block;
 }
 
-label[for="student-name"] {
-    display: block;
-    font-weight: bold;
-    margin: 15px 0 5px;
-    text-align: left;
-}
 
-#student-name {
-    display: block;
-    margin: 0 auto 15px;
-    padding: 5px;
-    width: 90%;
-    max-width: 300px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
-}
+        label[for="student-name"] {
+            display: block;
+            font-weight: bold;
+            margin: 15px 0 5px;
+            text-align: left;
+        }
 
-audio {
-    width: 100%;
-    max-width: 300px;
-    height: 40px;
-    margin: 15px 0;
-    visibility: hidden;
-}
+        #student-name {
+            display: block;
+            margin: 0 auto 15px;
+            padding: 5px;
+            width: 90%;
+            max-width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
 
-.audio-visible {
-    visibility: visible;
-}
+        audio {
+            width: 100%;
+            max-width: 300px;
+            height: 40px;
+            margin: 15px 0;
+            visibility: hidden;
+        }
 
-.controls, .navigation {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 15px;
-}
+        .audio-visible {
+            visibility: visible;
+        }
 
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
+        .controls, .navigation {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 15px;
+        }
 
-button.record {
-    background-color: #28cf7f;
-    color: white;
-    margin-bottom: 15px;
-}
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-button.stop {
-    background-color: #ff5757;
-    color: white;
-    margin-bottom: 15px;
-}
+        button.record {
+            background-color: #28cf7f;
+            color: white;
+            margin-bottom: 15px;
+        }
 
-button.submit {
-    background-color: #004aad;
-    color: white;
-    margin-top: 20px;
-}
+        button.stop {
+            background-color: #ff5757;
+            color: white;
+            margin-bottom: 15px;
+        }
 
-button.prev {
-    background-color: #ffbd59;
-    color: white;
-    transition: background-color 0.3s;
-}
+        button.submit {
+            background-color: #004aad;
+            color: white;
+            margin-top: 20px;
+        }
 
-button.next {
-    background-color: #ffbd59;
-    color: white;
-    transition: background-color 0.3s;
-}
+        button.prev {
+            background-color: #ffbd59;
+            color: white;
+            transition: background-color 0.3s;
+        }
 
-button:disabled {
-    background-color: #d3d3d3;
-    color: #8c8c8c;
-    cursor: not-allowed;
-}
+        button.next {
+            background-color: #ffbd59;
+            color: white;
+            transition: background-color 0.3s;
+        }
 
+        button:disabled {
+            background-color: #d3d3d3;
+            color: #8c8c8c;
+            cursor: not-allowed;
+        }
+    </style>
 </head>
 <body>
     <div class="homework-container">
@@ -141,37 +143,37 @@ button:disabled {
         // Image logic
     const images = [
     { src: "https://fleet-kingfish-basically.ngrok.app/images/set (1)/LRP.jpg", audio: "null" },
-    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (44)/1.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (44)/1.mp3" },
-    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (44)/2.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (44)/2.mp3" },
-    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (44)/3.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (44)/3.mp3" },
-    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (44)/4.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (44)/4.mp3" },
-    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (44)/5.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (44)/5.mp3" },
-    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (44)/6.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (44)/6.mp3" },
-    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (44)/7.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (44)/7.mp3" },
-    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (44)/8.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (44)/8.mp3" },
-    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (44)/9.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (44)/9.mp3" },
-    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (44)/10.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (44)/10.mp3" },
-    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (44)/11.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (44)/11.mp3" },
-    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (44)/12.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (44)/12.mp3" },
-    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (44)/13.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (44)/13.mp3" },
-    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (44)/14.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (44)/14.mp3" },
-    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (44)/15.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (44)/15.mp3" },
-    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (44)/16.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (44)/16.mp3" },
-    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (44)/17.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (44)/17.mp3" },
-    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (44)/18.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (44)/18.mp3" },
-    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (44)/19.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (44)/19.mp3" },
-    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (44)/20.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (44)/20.mp3" },
-    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (44)/21.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (44)/21.mp3" },
-    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (44)/22.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (44)/22.mp3" },
-    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (44)/23.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (44)/23.mp3" },
-    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (44)/24.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (44)/24.mp3" },
-    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (44)/25.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (44)/25.mp3" },
-    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (44)/26.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (44)/26.mp3" },
-    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (44)/27.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (44)/27.mp3" },    
-    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (44)/28.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (44)/28.mp3" },    
-    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (44)/29.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (44)/29.mp3" },    
-    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (44)/30.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (44)/30.mp3" },    
-    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (44)/31.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (44)/31.mp3" },    
+    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (42)/1.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (42)/1.mp3" },
+    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (42)/2.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (42)/2.mp3" },
+    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (42)/3.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (42)/3.mp3" },
+    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (42)/4.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (42)/4.mp3" },
+    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (42)/5.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (42)/5.mp3" },
+    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (42)/6.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (42)/6.mp3" },
+    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (42)/7.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (42)/7.mp3" },
+    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (42)/8.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (42)/8.mp3" },
+    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (42)/9.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (42)/9.mp3" },
+    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (42)/10.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (42)/10.mp3" },
+    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (42)/11.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (42)/11.mp3" },
+    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (42)/12.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (42)/12.mp3" },
+    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (42)/13.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (42)/13.mp3" },
+    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (42)/14.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (42)/14.mp3" },
+    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (42)/15.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (42)/15.mp3" },
+    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (42)/16.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (42)/16.mp3" },
+    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (42)/17.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (42)/17.mp3" },
+    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (42)/18.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (42)/18.mp3" },
+    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (42)/19.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (42)/19.mp3" },
+    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (42)/20.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (42)/20.mp3" },
+    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (42)/21.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (42)/21.mp3" },
+    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (42)/22.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (42)/22.mp3" },
+    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (42)/23.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (42)/23.mp3" },
+    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (42)/24.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (42)/24.mp3" },
+    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (42)/25.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (42)/25.mp3" },
+    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (42)/26.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (42)/26.mp3" },
+    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (42)/27.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (42)/27.mp3" },
+    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (42)/28.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (42)/28.mp3" },
+    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (42)/29.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (42)/29.mp3" },
+    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (42)/30.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (42)/30.mp3" },
+    { src: "https://fleet-kingfish-basically.ngrok.app/images/set (42)/31.jpg", audio: "https://fleet-kingfish-basically.ngrok.app/audio/set (42)/31.mp3" },
     { src: "https://fleet-kingfish-basically.ngrok.app/images/set (1)/Submit.jpg", audio: "null" }
     ];
 
